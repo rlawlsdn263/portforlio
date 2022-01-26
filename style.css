@@ -1,0 +1,129 @@
+/* Default Settings */
+
+:root {
+  /* Text Colors */
+  --white-color: #fff;
+  --gray-color: #cfd8dc;
+
+  /* Decoration Colors */
+  --background-color: #03a9f4;
+  --background-color-light: #73e8ff;
+
+  /* Spacing */
+  --small-space: 8px;
+  --medium-space: 12px;
+  --large-space: 16px;
+
+  /* Font Size */
+  --micro-font: 8px
+  --small-font: 12px;
+  --medium-font: 16px;
+  --large-font: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'open sans';
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+/* Home */
+
+.home {
+    background-repeat: no-repeat no-repeat;
+    background-image: url('imgs/space.png');
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Home - Navigation Bar */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--small-space) var(--medium-space);
+  color: var(--white-color);
+}
+
+.navigation .navigation__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navigation .navigation__logo img {
+  width: 20px;
+  margin-right: var(--small-space);
+}
+
+.navigation .navigation__menu {
+  display: flex;
+  align-items: center;
+  font-size: var(--medium-font);
+}
+
+.navigation .navigation__menu li {
+  padding: var(--small-space) var(--medium-space);
+}
+
+.navigation .navigation__menu li:hover {
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+}
+
+.navigation .navigation__menu li a {
+    color: var(--white-color);
+}
+
+/* Home - Introduction*/
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.introduction img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: calc(var(--large-space)*2);
+}
+
+.introduction .title {
+    margin-bottom: var(--large-space);
+    font-size: calc(var(--large-font)*3);
+    font-weight: 700;
+}
+
+.introduction .description {
+    margin-bottom: calc(var(--large-space)*3);
+    font-size: calc(var(--large-font)*2);
+    font-weight: 600;
+}
+
+.introduction button {
+    padding: calc(var(--small-space)*2) calc(var(--medium-space)*2);
+    font-size: calc(var(--large-font)*1);
+    text-transform: uppercase;
+    background-color: transparent;
+    color: var(--white-color);
+    border: 3px solid var(--white-color);
+    border-radius: 5px;
+    font-weight: 800;
+}
