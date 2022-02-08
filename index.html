@@ -4,40 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <title>Jinu's Portfolio</title>
-    <meta name="description" content="Portfoli for world-renowned software engineer Jinu">
-    <meta name="author" content="Jinu">
-    <link rel="icon" type="image/png" href="imgs/favicon.png">
     <script src="https://kit.fontawesome.com/babe730581.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <title>Portfolio Website</title>
 </head>
 <body>
-    <section class="home">
-        <!-- navbar -->
-        <header class="navigation">
-            <div class="navigation__logo">
-                <i class="fas fa-dragon"></i>
-                <h1>JINU</h1>
-            </div>
-            <ul class="navigation__menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">My work</a></li>
-                <li><a href="#">Testimonial</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </header>
-        <div class="introduction">
-            <img src="imgs/waktaverse.jpg">
-            <span class="title">Hello, I'm JinWoo</span>
-            <span class="description">A Software Engineer currently residing in Jeon-ju, South Korea</span>
-            <button>Contact Me</button>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fas fa-dragon"></i>
+            <a href="#">JINU</a>
         </div>
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item">Home</li>
+            <li class="navbar__menu__item">About</li>
+            <li class="navbar__menu__item">Skills</li>
+            <li class="navbar__menu__item">My Work</li>
+            <li class="navbar__menu__item">Testimonials</li>
+            <li class="navbar__menu__item">Contact</li>
+        </ul>
+    </nav>
+
+    <!-- About -->
+    <section id="about">
+        <img src="imgs/profile.jpg" alt="Jinu's profile photo" class="home__avatar">
+        <h1 class="home__title">Hello, <br/>I'm Dream Coder</h1>
+        <h2 class="home__description">A Software Engineer who can design</h2>
     </section>
-    <script src="main.js" defer></script>
+
+    <!-- Skills -->
+    <section id="skills"></section>
+
+    <!-- Work -->
+    <section id="work"></section>
+
+    <!-- Testimonials -->
+    <section id="testimonials"></section>
+
+    <!-- Contact -->
+    <section id="contact"></section>
 </body>
 </html>
