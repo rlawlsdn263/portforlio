@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+#navbar .navbar__logo a {
+  text-decoration: none;
+  color: black;
+}
+
+#navbar .navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar .navbar__menu .navbar__menu__item {
+  padding: 10px;
+}
+
+#navbar .navbar__menu .navbar__menu__item:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+}
