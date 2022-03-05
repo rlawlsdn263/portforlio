@@ -6,9 +6,6 @@ const nav = document.querySelector('#navbar');
 const navHeight = nav.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-    console.log(scrollY);
-    console.log(`navHeight: ${navHeight}`);
-
     if ( scrollY > navHeight) {
         nav.classList.add('nav--dark');
     } else {
@@ -43,6 +40,17 @@ function scrollIntoView(selector) {
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
 
+/* Transparent Home When Scrolled Down */
+const homeContainer = document.querySelector('.home__container');
+const homeContainerHeight = homeContainer.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+    if (scrollY > 300) {
+        homeContainer.classList.add('element__fade');
+    } else {
+        homeContainer.classList.remove('element__fade');
+    }
+})
 
 /*
 //엘리 코드
@@ -66,6 +74,18 @@ homeContactBtn.addEventListener('click', () => {                //<button>을 �
     const scrollTo = document.querySelector('#contact');        //scrollTo는 <section id="contact">다.
     scrollTo.scrollIntoView({behavior: "smooth"});              //<section id="contact">로 스크롤링해라
 })
+
+const home = document.querySelector('.home__container');  //<div class="home__container">는 home이라는 변수다
+const homeHeight = home.getBoundingClientRect().height;   //<div class="home__container">의 높이는 homeHeight이라는 변수다
+document.addEventListener('scroll', () => {               //document에 스크롤 이벤트를 할당했다.
+    home.style.opacity = 1 - window.scrollY / homeHeight; //document에서 스크롤이 발생하면 <div class="home__container">의 투명도를 1 - 스크롤 높이/<div class="home__container">의 높이로 해라
+});
 */
 
+/* Transparent Home When Scrolled Down */
+const home = document.querySelector('.home__container');  //<div class="home__container">는 home이라는 변수다
+const homeHeight = home.getBoundingClientRect().height;   //<div class="home__container">의 높이는 homeHeight이라는 변수다
+document.addEventListener('scroll', () => {               //document에 스크롤 이벤트를 할당했다.
+    home.style.opacity = 1 - window.scrollY / homeHeight; //document에서 스크롤이 발생하면 <div class="home__container">의 투명도를 1 - 스크롤 높이/<div class="home__container">의 높이로 해라
+});
 
