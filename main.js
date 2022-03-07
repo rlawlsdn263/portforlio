@@ -89,3 +89,34 @@ document.addEventListener('scroll', () => {               //document에 스크�
     home.style.opacity = 1 - window.scrollY / homeHeight; //document에서 스크롤이 발생하면 <div class="home__container">의 투명도를 1 - 스크롤 높이/<div class="home__container">의 높이로 해라
 });
 
+/* Scroll Up Button */
+const scrollUpBtn = document.querySelector('.scrollUpBtn');
+const homeHeightHalf = homeHeight / 2;
+
+document.addEventListener('scroll', () => {
+    if(scrollY > homeHeightHalf) {
+        scrollUpBtn.classList.add('scrollUpBtn__on');
+    } else {
+        scrollUpBtn.classList.remove('scrollUpBtn__on');
+    }
+})
+
+scrollUpBtn.addEventListener('click', () => {
+    scrollIntoView('#home');
+})
+
+/*
+//엘리 코드
+
+//Show "arrow up" button when scrolling down 
+const arrowUp = document.querySelector('.arrow-up');
+
+document.addEventListener('scroll', () => {
+    if(window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible);
+    }
+})
+
+*/

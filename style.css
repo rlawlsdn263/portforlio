@@ -150,6 +150,38 @@ p {
   display: none;
 }
 
+/* Scroll Up Button */
+.scrollUpBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  z-index: 1;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.scrollUpBtn i {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+}
+
+.scrollUpBtn__on {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Home */
 #home {
   background: url("imgs/home-background.png") center/cover no-repeat;
