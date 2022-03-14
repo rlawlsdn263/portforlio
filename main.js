@@ -109,14 +109,93 @@ scrollUpBtn.addEventListener('click', () => {
 //엘리 코드
 
 //Show "arrow up" button when scrolling down 
-const arrowUp = document.querySelector('.arrow-up');
+const arrowUp = document.querySelector('.arrow-up'); //<button class="arrow-up">은 arrowUp이다
 
-document.addEventListener('scroll', () => {
-    if(window.scrollY > homeHeight / 2) {
-        arrowUp.classList.add('visible');
-    } else {
-        arrowUp.classList.remove('visible);
+document.addEventListener('scroll', () => {          //문서에 scroll 이벤트를 부여한다
+    if(window.scrollY > homeHeight / 2) {            //scrollY가 homeHeight의 절반값보다 크다면
+        arrowUp.classList.add('visible');            //arrowUp에 class="visible"을 추가한다
+    } else {                                         //반대로 scrollY가 homeHeight의 절반값보다 작다면
+        arrowUp.classList.remove('visible);          //arrowUp에 class="visible"을 삭제한다
     }
 })
 
+arrowUp.addEventListener('click', () => {            //arrowUp에 click 이벤트를 부여한다
+    scrollIntoView('#home');                         //arrowUp을 클릭할 경우 scrollIntoView() 함수를 실행시킨다
+})                                                   //함수의 대상은 document.querySelector('#home')이다
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
 */
+
+//My Works Catergory Button
+const workCategoriesBtn = document.querySelector('.work__categories'); 
+const workProjects = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+console.log(workCategoriesBtn);
+console.log(workProjects);
+console.log(projects);
+
+workCategoriesBtn.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter;
+    console.log(filter);
+
+    projects.forEach(project => {
+        if (filter === '*' || filter === project.dataset.type) {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible');
+        }
+    })
+});
+
+/*
+//Ellie code
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelector('.project'); //8개의 프로젝트 요소가 담긴 배열을 할당한다
+
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.targer.dataset.filter;
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter; 없으면 false값이 나오기 떄문에
+    if (filter == null) {
+        retrun;
+    }
+
+    projects.forEach((project) => {
+        console.log(project.dataset.type);
+        if(filter==='*' || filter===project.dataset.type) {
+            project.classList.remove('invisible);
+        } else {
+            project.classList.add('invisible);
+        }
+
+    })
+
+    //forEach는 무엇과 닮았는가?
+    console.log(`-----------------------`);
+    for(project of projects) {
+        console.log(project);
+    }
+
+    console.log(`-----------------------`);
+    let project;
+    for (let i = 0; i < projects.length; i++) {
+        project = projects[i];
+        console.log(project);
+    }
+    console.log(filter);
+})
+
+
+
+*/
+
+
+
+
+
+
+
