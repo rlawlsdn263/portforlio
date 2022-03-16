@@ -18,6 +18,7 @@ document.addEventListener('scroll', () => {
 const navbarMenu = document.querySelector('.navbar__menu');
 
 navbarMenu.addEventListener('click', (e)=> {
+    const target = e.target;
     const link = e.target.dataset.link;
     if (link == null) {
         return;
@@ -25,6 +26,8 @@ navbarMenu.addEventListener('click', (e)=> {
 
     scrollIntoView(link);
 }) 
+
+
 
 /* Home Contact Button Scroll Effect */
 const contactBtn = document.querySelector('.home__contact');
@@ -132,6 +135,7 @@ function scrollIntoView(selector) {
 //My Works Catergory Button + Filtering Animation
 const workBtnContainer = document.querySelector('.work__categories');
 const projectsContainer = document.querySelector('.work__projects');
+const workBtn = document.querySelectorAll('.category__btn');
 const projects = document.querySelectorAll('.project');
 
 workBtnContainer.addEventListener('click', (e) => {
@@ -139,6 +143,13 @@ workBtnContainer.addEventListener('click', (e) => {
     if (filter == null) {
         return;
     }
+
+    //Remove Selection from the previous item and select the new one
+    const active = document.querySelector('.category__btn.selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    active.classList.remove('selected');
+    target.classList.add('selected');
+
     projectsContainer.classList.add('animation__out');                                   //사라지게 해
     setTimeout(() => {                            
         projects.forEach((project) => {                                                  //필터링된 값을 3초 후에 보이게 해
@@ -188,9 +199,6 @@ workBtnContainer.addEventListener('click', (e) => {
     }
     console.log(filter);
 })
-
-
-
 */
 
 
