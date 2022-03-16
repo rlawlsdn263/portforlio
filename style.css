@@ -399,6 +399,13 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.animation__out {
+  opacity: 0;
+  transform: scale(0.9) translateY(40px);
 }
 
 .project {

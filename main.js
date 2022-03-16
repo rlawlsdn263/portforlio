@@ -129,30 +129,30 @@ function scrollIntoView(selector) {
 }
 */
 
-//My Works Catergory Button
-const workCategoriesBtn = document.querySelector('.work__categories'); 
-const workProjects = document.querySelector('.work__projects');
+//My Works Catergory Button + Filtering Animation
+const workBtnContainer = document.querySelector('.work__categories');
+const projectsContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 
-console.log(workCategoriesBtn);
-console.log(workProjects);
-console.log(projects);
-
-workCategoriesBtn.addEventListener('click', (e) => {
-    const filter = e.target.dataset.filter;
-    console.log(filter);
-
-    projects.forEach(project => {
-        if (filter === '*' || filter === project.dataset.type) {
-            project.classList.remove('invisible');
-        } else {
-            project.classList.add('invisible');
-        }
-    })
-});
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter||e.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
+    projectsContainer.classList.add('animation__out');                                   //사라지게 해
+    setTimeout(() => {                            
+        projects.forEach((project) => {                                                  //필터링된 값을 3초 후에 보이게 해
+            if(filter==="*"||filter===project.dataset.type) {                           
+                project.classList.remove('invisible');                                   
+            } else {                                                                     
+                project.classList.add('invisible');                                      
+            }
+        })   
+        projectsContainer.classList.remove('animation__out')}, 300);
+})
 
 /*
-//Ellie code
+//엘리 코드
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelector('.project'); //8개의 프로젝트 요소가 담긴 배열을 할당한다
