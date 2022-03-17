@@ -23,7 +23,7 @@ navbarMenu.addEventListener('click', (e)=> {
     if (link == null) {
         return;
     }
-
+    navbarMenu.classList.remove('toggle');
     scrollIntoView(link);
 }) 
 
@@ -149,6 +149,8 @@ workBtnContainer.addEventListener('click', (e) => {
     const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
     active.classList.remove('selected');
     target.classList.add('selected');
+    console.log(active);
+    console.log(target);
 
     projectsContainer.classList.add('animation__out');                                   //사라지게 해
     setTimeout(() => {                            
@@ -201,6 +203,34 @@ workBtnContainer.addEventListener('click', (e) => {
 })
 */
 
+//Toggle Button Menu
+//const nav = document.querySelector('#navbar');
+//const navbarMenu = document.querySelector('.navbar__menu');
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+
+toggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('toggle');
+})
+
+/*
+//엘리 코딩 - Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+})
+
+//CSS - mediaquery
+
+#navbar {
+    background-color: pink'
+}
+
+.navbar__menu.open {
+    display: block;
+}
+
+
+*/
 
 
 
