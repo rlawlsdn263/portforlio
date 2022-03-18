@@ -212,6 +212,11 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+  transition: background-color var(--animation-duration) ease-in-out;
+}
+
+.home__contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* Fade */
@@ -362,6 +367,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -373,7 +379,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0px;
+  top: 4px;
 }
 
 .category__count {
@@ -384,9 +390,9 @@ p {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -533,8 +539,24 @@ p {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font Size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .home__description {
+    font-size: var(--font-regular);
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 18px;
+    right: 18px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -554,24 +576,56 @@ p {
     display: flex;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px 0;
+    width: 70%;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonials__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonials__speech-bubble {
+    order: 1;
+  }
+
+  .testimonials__avatar:nth-child(odd),
+  .testimonials__avatar:nth-child(even) {
+    margin: 0px;
+    margin-bottom: 8px;
+  }
+
+  .scrollUpBtn {
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
 }
